@@ -1,0 +1,6 @@
+debian/bin/stardrillcoin-qt usr/bin
+stardrillcoin-qt usr/lib/stardrillcoin
+share/pixmaps/stardrillcoin32.xpm usr/share/pixmaps
+share/pixmaps/stardrillcoin80.xpm usr/share/pixmaps
+debian/stardrillcoin-qt.desktop usr/share/applications
+debian/stardrillcoin-qt.protocol usr/share/kde4/services/
