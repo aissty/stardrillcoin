@@ -35,11 +35,11 @@ script: |
     STAGING=$HOME/staging${BITS}
     BUILDDIR=$HOME/build${BITS}
     BINDIR=$OUTDIR/$BITS
-    if [ "$BITS" == "32" ]; then
-      HOST=i686-w64-mingw32
-    else
+    //if [ "$BITS" == "32" ]; then
+     // HOST=i686-w64-mingw32
+   // else
       HOST=x86_64-w64-mingw32
-    fi
+   // fi
     export PATH=$STAGING/host/bin:$PATH
     mkdir -p $STAGING $BUILDDIR $BINDIR
     #
