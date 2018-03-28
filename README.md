@@ -5,13 +5,13 @@
 
 ## What is Stardrillcoin?
 
-Stardrillcoin are an inexpensive and decentralized ledger to be used by businesses for tracking share ownership and distributing dividends in an automated fashion. SDC can be transferred and held just like other cryptocurrency units, such as peercoins or bitcoins.
+Stardrillcoin is an inexpensive and decentralized ledger for businesses to track share ownership and distribute dividends in an automated fashion. SDC can be transferred and held like other cryptocurrency units, such as peercoins and bitcoins.
 
-Using Stardrillcoin, individuals, businesses, or organizations of any size could raise funding through an initial offering without depending on a third party such as a stock exchange. While trading SDC through exchanges will be useful to provide liquidity, Stardrillcoin can be traded on any number of exchanges just as Peercoins can. 
+Each business using Stardrillcoin will have their own blockchain that is independent of all others. Blockchains can be secured cheaply and easily using Peercoin's proof-of-stake once the initial (issuer-controlled) quantity of SDC have been generated using proof-of-work.
 
-Each business using Stardrillcoin will have their own blockchain that is independent of all others. Blockchains can be secured cheaply and easily using Peercoin's proof-of-stake, once the initial (issuer-controlled) quantity of SDC have been generated using proof-of-work.
+Using Stardrillcoin, individuals, businesses, or organizations of any size can raise funding through an initial offering without depending on a third party such as a stock exchange. While trading SDCs through exchanges will be more liquid, Stardrillcoin can be traded on any number of exchanges just as Peercoins can. 
 
-Issuers can distribute dividends as Peercoins, which can then be held by the investors, or if they would prefer, can then take those dividends and convert them to another cryptocurrency or fiat through their preferred exchange.
+Issuers can distribute dividends as in Peercoins. Dividends can be held by investors, or can be converted to another cryptocurrency or fiat through their preferred exchange.
 
 A share issuer is not vulnerable to the failure of single stock exchange such as BTC Trading or Litecoin Global. 
 
