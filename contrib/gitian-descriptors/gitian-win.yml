@@ -25,28 +25,28 @@ files:
 - "stardrillcoin-deps-win64-gitian-r12.zip"
 script: |
   # Defines
-  export TZ=UTC
-  INDIR=$HOME/build
-  OPTFLAGS='-O2'
-  TEMPDIR="$HOME/tempdir"
+ #export TZ=UTC
+ # INDIR=$HOME/build
+ # OPTFLAGS='-O2'
+  #TEMPDIR="$HOME/tempdir"
   #NEEDDIST=1
-  for BITS in 32 64; do # for architectures
+  #for BITS in 32 64; do # for architectures
     #
-    STAGING=$HOME/staging${BITS}
-    BUILDDIR=$HOME/build${BITS}
-    BINDIR=$OUTDIR/$BITS
-   if [ "$BITS" == "32" ]; then
-      HOST=i686-w64-mingw32
-    else
+   # STAGING=$HOME/staging${BITS}
+   # BUILDDIR=$HOME/build${BITS}
+   # BINDIR=$OUTDIR/$BITS
+   #if [ "$BITS" == "32" ]; then
+     # HOST=i686-w64-mingw32
+   # else
       HOST=x86_64-w64-mingw32
-    fi
+   # fi
     export PATH=$STAGING/host/bin:$PATH
     mkdir -p $STAGING $BUILDDIR $BINDIR
     #
     cd $STAGING
-    unzip $INDIR/qt-win${BITS}-4.8.5-gitian-r3.zip
-    unzip $INDIR/boost-win${BITS}-1.55.0-gitian-r6.zip
-    unzip $INDIR/stardrillcoin-deps-win${BITS}-gitian-r12.zip
+    unzip $INDIR/qt-win64-4.8.5-gitian-r3.zip
+    unzip $INDIR/boost-win64-1.55.0-gitian-r6.zip
+    unzip $INDIR/stardrillcoin-deps-win64-gitian-r12.zip
     #if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
       #cd $HOME/build/stardrillcoin
@@ -62,8 +62,8 @@ script: |
     cp -r $HOME/build/stardrillcoin distsrc
     cd distsrc
 
-    export LD_PRELOAD=/usr/lib/faketime/libfaketime.so.1
-    export FAKETIME=$REFERENCE_DATETIME
+    #export LD_PRELOAD=/usr/lib/faketime/libfaketime.so.1
+    #export FAKETIME=$REFERENCE_DATETIME
 
     $STAGING/host/bin/qmake -spec win32-g++ CROSS_COMPILE=$HOST USE_QRCODE=1 INCLUDEPATH=$STAGING BOOST_LIB_SUFFIX=-mt-s BOOST_THREAD_LIB_SUFFIX=_win32-mt-s DEFINES=BOOST_THREAD_USE_LIB BITCOIN_NEED_QT_PLUGINS=1 QMAKE_LRELEASE=lrelease QMAKE_CXXFLAGS=-frandom-seed=stardrillcoin QMAKE_LFLAGS="-static-libgcc -static-libstdc++ -frandom-seed=stardrillcoin" USE_BUILD_INFO=1
     make $MAKEOPTS
@@ -84,8 +84,8 @@ script: |
     cp $BINDIR/stardrillcoind.exe release/
     makensis share/setup.nsi
     cp share/Stardrillcoin-*setup*.exe $BINDIR
-    unset LD_PRELOAD
-    unset FAKETIME
+    #unset LD_PRELOAD
+    #unset FAKETIME
   done # for BITS in
 
   # sort distribution tar file and normalize user/group/mtime information for deterministic output
