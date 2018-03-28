@@ -29,13 +29,13 @@ script: |
   INDIR=$HOME/build
   OPTFLAGS='-O2'
   TEMPDIR="$HOME/tempdir"
-  NEEDDIST=1
+  #NEEDDIST=1
   for BITS in 32 64; do # for architectures
     #
-    STAGING=$HOME/staging${BITS}
-    BUILDDIR=$HOME/build${BITS}
-    BINDIR=$OUTDIR/$BITS
-    if [ "$BITS" == "32" ]; then
+    #STAGING=$HOME/staging${BITS}
+    #BUILDDIR=$HOME/build${BITS}
+    #BINDIR=$OUTDIR/$BITS
+   if [ "$BITS" == "32" ]; then
       HOST=i686-w64-mingw32
     else
       HOST=x86_64-w64-mingw32
