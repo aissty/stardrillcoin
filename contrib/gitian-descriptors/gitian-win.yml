@@ -47,15 +47,15 @@ script: |
     unzip $INDIR/qt-win${BITS}-4.8.5-gitian-r3.zip
     unzip $INDIR/boost-win${BITS}-1.55.0-gitian-r6.zip
     unzip $INDIR/stardrillcoin-deps-win${BITS}-gitian-r12.zip
-    if [ "$NEEDDIST" == "1" ]; then
+    #if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
-      cd $HOME/build/stardrillcoin
+      #cd $HOME/build/stardrillcoin
       #git archive --format=tar -o stardrillcoin.tar HEAD
-      cp doc/README_windows.txt $OUTDIR/readme.txt
-      cp COPYING $OUTDIR/license.txt
-      DISTNAME=stardrillcoin.tar
-      NEEDDIST=0
-    fi
+      #cp doc/README_windows.txt $OUTDIR/readme.txt
+      #cp COPYING $OUTDIR/license.txt
+      #DISTNAME=stardrillcoin.tar
+      #NEEDDIST=0
+    #fi
 
     # Build platform-dependent executables from source archive
     cd $BUILDDIR
