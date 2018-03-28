@@ -29,7 +29,7 @@ script: |
  INDIR=$HOME/build
  OPTFLAGS='-O2'
  TEMPDIR="$HOME/tempdir"
-  #NEEDDIST=0
+ NEEDDIST=0
   #for BITS in 32 64; do # for architectures
     #
    STAGING=$HOME/staging64
