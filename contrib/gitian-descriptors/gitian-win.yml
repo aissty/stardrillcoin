@@ -50,7 +50,7 @@ script: |
     if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
       cd $HOME/build/stardrillcoin
-      git archive --format=tar -o stardrillcoin.tar HEAD
+      #git archive --format=tar -o stardrillcoin.tar HEAD
       cp doc/README_windows.txt $OUTDIR/readme.txt
       cp COPYING $OUTDIR/license.txt
       DISTNAME=stardrillcoin.tar
