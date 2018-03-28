@@ -25,16 +25,16 @@ files:
 - "stardrillcoin-deps-win64-gitian-r12.zip"
 script: |
   # Defines
- #export TZ=UTC
- # INDIR=$HOME/build
- # OPTFLAGS='-O2'
-  #TEMPDIR="$HOME/tempdir"
-  #NEEDDIST=1
+ export TZ=UTC
+ INDIR=$HOME/build
+ OPTFLAGS='-O2'
+ TEMPDIR="$HOME/tempdir"
+  #NEEDDIST=0
   #for BITS in 32 64; do # for architectures
     #
-   # STAGING=$HOME/staging${BITS}
-   # BUILDDIR=$HOME/build${BITS}
-   # BINDIR=$OUTDIR/$BITS
+   STAGING=$HOME/staging64
+    BUILDDIR=$HOME/build64
+    BINDIR=$OUTDIR/64
    #if [ "$BITS" == "32" ]; then
      # HOST=i686-w64-mingw32
    # else
@@ -47,15 +47,15 @@ script: |
     unzip $INDIR/qt-win64-4.8.5-gitian-r3.zip
     unzip $INDIR/boost-win64-1.55.0-gitian-r6.zip
     unzip $INDIR/stardrillcoin-deps-win64-gitian-r12.zip
-    #if [ "$NEEDDIST" == "1" ]; then
+    if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
-      #cd $HOME/build/stardrillcoin
-      #git archive --format=tar -o stardrillcoin.tar HEAD
-      #cp doc/README_windows.txt $OUTDIR/readme.txt
-      #cp COPYING $OUTDIR/license.txt
-      #DISTNAME=stardrillcoin.tar
-      #NEEDDIST=0
-    #fi
+      cd $HOME/build/stardrillcoin
+      git archive --format=tar -o stardrillcoin.tar HEAD
+      cp doc/README_windows.txt $OUTDIR/readme.txt
+      cp COPYING $OUTDIR/license.txt
+      DISTNAME=stardrillcoin.tar
+      NEEDDIST=0
+    fi
 
     # Build platform-dependent executables from source archive
     cd $BUILDDIR
